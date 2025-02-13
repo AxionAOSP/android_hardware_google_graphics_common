@@ -29,7 +29,8 @@ LOCAL_PROPRIETARY_MODULE := true
 LOCAL_CFLAGS += \
 	-DSOC_VERSION=$(soc_ver) \
 	-DLOG_TAG=\"hwc-3\" \
-	-Wthread-safety
+	-Wthread-safety \
+	-O3
 
 # hwc3 re-uses hwc2.2 ComposerResource and libexynosdisplay
 LOCAL_SHARED_LIBRARIES := android.hardware.graphics.composer3-V4-ndk \
