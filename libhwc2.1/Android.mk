@@ -45,6 +45,7 @@ LOCAL_CFLAGS := -DHLOG_CODE=0
 LOCAL_CFLAGS += -Wno-unused-parameter
 LOCAL_CFLAGS += -DSOC_VERSION=$(soc_ver)
 LOCAL_CFLAGS += -Wthread-safety
+LOCAL_CFLAGS += -O3
 LOCAL_EXPORT_SHARED_LIBRARY_HEADERS := libdrm
 
 ifeq ($(CLANG_COVERAGE),true)
@@ -181,6 +182,7 @@ LOCAL_CFLAGS += -DLOG_TAG=\"hwc-display\"
 LOCAL_CFLAGS += -Wno-unused-parameter
 LOCAL_CFLAGS += -DSOC_VERSION=$(soc_ver)
 LOCAL_CFLAGS += -Wthread-safety
+LOCAL_CFLAGS += -O3
 
 ifeq ($(CLANG_COVERAGE),true)
 # enable code coverage (these flags are copied from build/soong/cc/coverage.go)
@@ -257,6 +259,7 @@ LOCAL_CFLAGS := -DHLOG_CODE=0
 LOCAL_CFLAGS += -DLOG_TAG=\"hwc-service\"
 LOCAL_CFLAGS += -DSOC_VERSION=$(soc_ver)
 LOCAL_CFLAGS += -Wthread-safety
+LOCAL_CFLAGS += -O3
 
 ifeq ($(CLANG_COVERAGE),true)
 # enable code coverage (these flags are copied from build/soong/cc/coverage.go)
@@ -316,6 +319,7 @@ LOCAL_CFLAGS := -DHLOG_CODE=0
 LOCAL_CFLAGS += -DLOG_TAG=\"hwc-2\"
 LOCAL_CFLAGS += -DSOC_VERSION=$(soc_ver)
 LOCAL_CFLAGS += -Wthread-safety
+LOCAL_CFLAGS += -O3
 
 ifeq ($(CLANG_COVERAGE),true)
 # enable code coverage (these flags are copied from build/soong/cc/coverage.go)

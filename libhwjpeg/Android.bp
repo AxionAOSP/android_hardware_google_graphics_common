@@ -18,7 +18,7 @@ cc_library_shared {
         "ThumbnailScaler.cpp",
     ],
     export_include_dirs: ["include"],
-    cflags: ["-DLOG_TAG=\"exynos-libhwjpeg\""],
+    cflags: ["-DLOG_TAG=\"exynos-libhwjpeg\"", "-O3"],
     header_libs: [
         "google_hal_headers",
         "libcutils_headers",

@@ -97,7 +97,7 @@ LOCAL_CFLAGS += -fprofile-instr-generate -fcoverage-mapping
 LOCAL_CFLAGS += -Wno-frame-larger-than=
 LOCAL_WHOLE_STATIC_LIBRARIES += libprofile-clang-extras_ndk
 LOCAL_LDFLAGS += -fprofile-instr-generate
-LOCAL_LDFLAGS += -Wl,--wrap,open
+LOCAL_LDFLAGS += -Wl,--wrap,open -O3
 
 ifeq ($(CLANG_COVERAGE_CONTINUOUS_MODE),true)
 LOCAL_CFLAGS += -mllvm -runtime-counter-relocation
