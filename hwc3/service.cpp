@@ -40,6 +40,16 @@ int main(int /*argc*/, char* argv[]) {
         LOG(ERROR) << "Couldn't set SCHED_FIFO: " << errno;
     }
 
+    cpu_set_t cpuset;
+    CPU_ZERO(&cpuset);
+    for (int i = 4; i <= 7; ++i) {
+        CPU_SET(i, &cpuset);
+    }
+
+    if (sched_setaffinity(0, sizeof(cpu_set_t), &cpuset) != 0) {
+        ALOGW("Failed to set HWComposer CPU affinity to big cores!");
+    }
+
     std::shared_ptr<Composer> composer = ndk::SharedRefBase::make<Composer>();
     CHECK(composer != nullptr);
 
