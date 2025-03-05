@@ -3678,6 +3678,16 @@ int32_t ExynosDisplay::presentDisplay(int32_t* outRetireFence) {
         }
         setTaskProfileDone = true;
     }
+    
+    cpu_set_t cpuset;
+    CPU_ZERO(&cpuset);
+    for (int i = 4; i <= 7; ++i) {
+        CPU_SET(i, &cpuset);
+    }
+
+    if (sched_setaffinity(0, sizeof(cpu_set_t), &cpuset) != 0) {
+        ALOGW("Failed to set ExynosDisplay CPU affinity to big cores!");
+    }
 
     Mutex::Autolock lock(mDisplayMutex);
 
