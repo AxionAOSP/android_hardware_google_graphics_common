@@ -3667,8 +3667,8 @@ int32_t ExynosDisplay::presentDisplay(int32_t* outRetireFence) {
     thread_local bool setTaskProfileDone = false;
 
     if (setTaskProfileDone == false) {
-        if (!SetTaskProfiles(gettid(), {"SFMainPolicy"})) {
-            ALOGW("Failed to add `%d` into SFMainPolicy", gettid());
+        if (!SetTaskProfiles(gettid(), {"DisplayCapacity", "DisplayPerformance"})) {
+            ALOGW("Failed to add `%d` into DisplayCapacity", gettid());
         }
         setTaskProfileDone = true;
     }

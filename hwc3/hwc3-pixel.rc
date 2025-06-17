@@ -4,4 +4,4 @@ service vendor.hwcomposer-3 /vendor/bin/hw/android.hardware.composer.hwc3-servic
     group graphics drmrpc
     capabilities SYS_NICE
     onrestart restart surfaceflinger
-    task_profiles ServiceCapacityLow
+    task_profiles DisplayCapacity DisplayPerformance
